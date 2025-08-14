@@ -172,13 +172,29 @@
       background: rgba(255,255,255,0.05);
     }
     
-    .cta {
+    .btn-group {
       display: flex;
       flex-direction: column;
       gap: 0.7rem;
       align-items: center;
       width: 100%;
       margin-top: 1rem;
+    }
+    
+    /* Botões específicos */
+    .btn-download {
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      color: #080808;
+    }
+    
+    .btn-whatsapp {
+       background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      color: #080808;
+    }
+    
+    .btn-email {
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      color: #080808;
     }
     
     /* Layout do conteúdo principal */
@@ -466,7 +482,7 @@
         text-align: left;
       }
       
-      .cta {
+      .btn-group {
         flex-direction: row;
         width: auto;
         justify-content: flex-end;
@@ -558,20 +574,24 @@
         </div>
       </div>
 
-      <div class="cta" role="region" aria-label="Ações">
-        <a href="AlexandreDev.pdf" download="Curriculo_Alexandre_Silva.pdf" class="btn" id="downloadBtn">
+      <div class="btn-group" role="region" aria-label="Ações">
+        <!-- Botão Baixar PDF -->
+        <a href="AlexandreDev.pdf" download="AlexandreDev.pdf" class="btn btn-download">
           <i class="fa-solid fa-download"></i>
-          <span>Baixar Currículo PDF</span>
+          <span>Baixar PDF</span>
         </a>
-       <a href="https://wa.me/5591984829252?text=Ol%C3%A1%2C%20vi%20seu%20curr%C3%ADculo%20online%20e%20gostaria%20de%20conversar" target="_blank">
-  <button class="btn btn-outline" id="contactBtn">
-    <i class="fa-solid fa-paper-plane"></i>
-    <span>Entrar em contato</span>
-  </button>
-</a>
-
-</a>
-        </button>
+        
+        <!-- Botão WhatsApp -->
+        <a href="https://wa.me/5591984829252?text=Ol%C3%A1%2C%20vi%20seu%20curr%C3%ADculo%20online%20e%20gostaria%20de%20conversar" target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        
+        <!-- Botão Email -->
+        <a href="mailto:pjdevalexandre@gmail.com" class="btn btn-email">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Email</span>
+        </a>
       </div>
     </div>
   </header>
@@ -696,6 +716,30 @@
             </button>
           </article>
 
+          <article class="exp-item" id="e4">
+  <div class="exp-head">
+    <div>
+      <h3>Professor de Informática (Estágio) — CMAPID</h3>
+      <div style="color:var(--muted);font-size:0.9rem">2024 — 2024</div>
+    </div>
+    <div><span class="tag-yellow">Educação Tecnológica</span></div>
+  </div>
+  <div class="exp-desc" aria-hidden="true">
+    <p>Atuei como professor estagiário em meio período, ministrando aulas de informática básica e intermediária para público diverso (crianças, adolescentes e adultos). Desenvolvi materiais didáticos adaptados e metodologias de ensino inclusivas.</p>
+    <p><strong>Principais atividades:</strong></p>
+    <ul style="color:var(--muted);margin-left:20px;margin-top:8px">
+      <li>Planejamento e ministração de aulas práticas</li>
+      <li>Suporte individualizado aos alunos</li>
+      <li>Adaptação de conteúdo para diferentes níveis de conhecimento</li>
+      <li>Manutenção básica dos equipamentos do laboratório</li>
+    </ul>
+  </div>
+  <button class="btn" onclick="toggleExp('e4', this)">
+    <i class="fa-solid fa-chevron-down"></i>
+    <span>Ver mais</span>
+  </button>
+</article>
+
           <!-- Caixa -->
           <article class="exp-item" id="e2">
             <div class="exp-head">
@@ -706,7 +750,7 @@
               <div><span class="tag-yellow">Sistemas PDV</span></div>
             </div>
             <div class="exp-desc" aria-hidden="true">
-              <p>Operação e suporte: controle de vendas, fluxo de caixa e estoque. Atuei na identificação e correção de falhas simples de software e hardware do ponto de venda, garantindo continuidade do atendimento e precisão no controle de estoque.</p>
+              <p>Operação e suporte: controle de vendas, fluxo de caixa e estoque. Auxilio na identificação e correção de falhas simples de software e hardware do ponto de venda, garantindo continuidade do atendimento e precisão no controle de estoque.</p>
             </div>
             <button class="btn" onclick="toggleExp('e2', this)">
               <i class="fa-solid fa-chevron-down"></i>
@@ -724,7 +768,7 @@
               <div><span class="tag-yellow">Processos / Técnica</span></div>
             </div>
             <div class="exp-desc" aria-hidden="true">
-              <p>Atuei na linha de produção, operando e monitorando máquinas têxteis, controlando qualidade e auxiliando no planejamento da produção. Colaborei com a equipe de TI para automatizar pequenos processos manuais, melhorando a eficiência da linha.</p>
+              <p>Atuei na linha de produção, operando e monitorando máquinas têxteis, garantindo qualidade e auxiliando na produção.</p>
             </div>
             <button class="btn" onclick="toggleExp('e3', this)">
               <i class="fa-solid fa-chevron-down"></i>
@@ -756,12 +800,6 @@
         btn.querySelector('span').textContent = 'Ver menos';
       }
     }
-
-    // Ações para os botões
-    document.getElementById('contactBtn').addEventListener('click', () => {
-      // Implementar lógica de contato
-      window.location.href = 'mailto:pjdevalexandre@gmail.com';
-    });
 
     // Animar a barra de progresso quando a página carrega
     document.addEventListener('DOMContentLoaded', () => {
