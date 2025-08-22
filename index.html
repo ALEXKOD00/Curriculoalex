@@ -211,6 +211,21 @@
       animation: pulseGlowInstagram 3s ease-in-out infinite;
     }
     
+    /* Botão Ver Mais (amarelo com texto preto) */
+    .btn-expand {
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      color: #080808 !important;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    
+    .btn-expand:hover {
+      background: linear-gradient(180deg, var(--accent), #e6b800);
+      transform: translateY(-2px);
+    }
+    
     /* Layout do conteúdo principal */
     .wrap {
       max-width: 1100px;
@@ -253,11 +268,37 @@
       display: inline-flex;
       gap: 8px;
       align-items: center;
-      background: rgba(0,0,0,0.25);
-      padding: 6px 10px;
+      background: linear-gradient(90deg, rgba(155,89,182,0.2), rgba(241,196,15,0.2));
+      padding: 8px 14px;
       border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.9rem;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.7s ease;
+    }
+    
+    .tag:hover::before {
+      left: 100%;
+    }
+    
+    .tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(241,196,15,0.3);
     }
     
     .info-list p {
@@ -449,6 +490,16 @@
     }
     
     /* Animações */
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 8px 18px rgba(241,196,15,0.18);
+      }
+      50% {
+        box-shadow: 0 12px 25px rgba(241,196,15,0.6);
+        transform: translateY(-2px);
+      }
+    }
+    
     @keyframes pulseGlowDownload {
       0%, 100% {
         box-shadow: 0 8px 18px rgba(155, 89, 182, 0.18);
@@ -734,7 +785,7 @@
           <span class="tag">Formação</span>
         </div>
         <p style="color:var(--muted)">
-          <strong>Sistemas de Informação — UFRA</strong> (em andamento)
+          <strong>Sistemas de Information — UFRA</strong> (em andamento)
         </p>
         <p style="color:var(--muted)">
           <strong>Pedagogia — UNOPAR ANHANGUERA</strong> (cursando)
@@ -781,15 +832,23 @@
           <article class="exp-item" id="e1">
             <div class="exp-head">
               <div>
-                <h3>Caixa e gestor — Cachoeira do Apolônio</h3>
+                <h3>Caixa — Cachoeira do Apolônio</h3>
                 <div style="color:var(--muted);font-size:0.9rem">2024 — 2025</div>
               </div>
-              <div><span class="tag-yellow">Gestão</span></div>
+              <div><span class="tag-yellow">Caixa</span></div>
             </div>
             <div class="exp-desc" aria-hidden="true">
-              <p>Responsável pela gestão de colaboradores: Treinamento, escala, e resolução de problemas operacionais e técnicos. Habilidade consolidada em tomada de decisão sob pressão e feedback contínuo.</p>
+              <p>Atuo como caixa responsável, realizando todas as operações financeiras do estabelecimento com precisão e organização. Minhas principais responsabilidades incluem:</p>
+  <ul style="color:var(--muted);margin-left:20px;margin-top:8px">
+    <li>Atendimento ao cliente com excelência no momento do fechamento de contas</li>
+    <li>Gestão do fluxo de caixa e conferência de valores</li>
+    <li>Operação do sistema PDV e emissão de relatórios financeiros</li>
+    <li>Escala de serviço dos garçons, organizando e distribuindo as funções</li>
+    <li>Supervisão das atividades da equipe de atendimento durante o expediente</li>
+    <li>Resolução de questões operacionais.</li>
+  </ul>
             </div>
-            <button class="btn" onclick="toggleExp('e1', this)">
+            <button class="btn btn-expand" onclick="toggleExp('e1', this)">
               <i class="fa-solid fa-chevron-down"></i>
               <span>Ver mais</span>
             </button>
@@ -813,7 +872,7 @@
       <li>Manutenção básica dos equipamentos do laboratório</li>
     </ul>
   </div>
-  <button class="btn" onclick="toggleExp('e4', this)">
+  <button class="btn btn-expand" onclick="toggleExp('e4', this)">
     <i class="fa-solid fa-chevron-down"></i>
     <span>Ver mais</span>
   </button>
@@ -823,7 +882,7 @@
           <article class="exp-item" id="e2">
             <div class="exp-head">
               <div>
-                <h3>Operador de Caixa — Lojão dos Motoqueiros</h3>
+                <h3>Vendedor e Caixa — Lojão dos Motoqueiros</h3>
                 <div style="color:var(--muted);font-size:0.9rem">2023 — 2023</div>
               </div>
               <div><span class="tag-yellow">Sistemas PDV</span></div>
@@ -831,7 +890,7 @@
             <div class="exp-desc" aria-hidden="true">
               <p>Operação e suporte: controle de vendas, fluxo de caixa e estoque. Auxilio na identificação e correção de falhas simples de software e hardware do ponto de venda, garantindo continuidade do atendimento e precisão no controle de estoque.</p>
             </div>
-            <button class="btn" onclick="toggleExp('e2', this)">
+            <button class="btn btn-expand" onclick="toggleExp('e2', this)">
               <i class="fa-solid fa-chevron-down"></i>
               <span>Ver mais</span>
             </button>
@@ -849,7 +908,7 @@
             <div class="exp-desc" aria-hidden="true">
               <p>Atuei na linha de produção, operando e monitorando máquinas têxteis, garantindo qualidade e auxiliando na produção.</p>
             </div>
-            <button class="btn" onclick="toggleExp('e3', this)">
+            <button class="btn btn-expand" onclick="toggleExp('e3', this)">
               <i class="fa-solid fa-chevron-down"></i>
               <span>Ver mais</span>
             </button>
