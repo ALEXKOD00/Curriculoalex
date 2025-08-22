@@ -23,6 +23,8 @@
       --glass: rgba(255,255,255,0.03);
       --radius: 12px;
       --shadow: 0 10px 30px rgba(0,0,0,0.6);
+      --linkedin: #0a66c2;      /* Azul LinkedIn */
+      --instagram: #e1306c;     /* Rosa Instagram */
     }
     
     /* Reset e estilos base */
@@ -195,6 +197,18 @@
     .btn-email {
       background: linear-gradient(180deg, var(--accent), var(--accent-dark));
       color: #080808;
+    }
+    
+    .btn-linkedin {
+      background: linear-gradient(180deg, var(--linkedin), #084a9c);
+      color: white;
+      animation: pulseGlowLinkedIn 3s ease-in-out infinite;
+    }
+    
+    .btn-instagram {
+      background: linear-gradient(45deg, var(--instagram), #833ab4, #fcaf45);
+      color: white;
+      animation: pulseGlowInstagram 3s ease-in-out infinite;
     }
     
     /* Layout do conteúdo principal */
@@ -445,6 +459,26 @@
       }
     }
     
+    @keyframes pulseGlowLinkedIn {
+      0%, 100% {
+        box-shadow: 0 8px 18px rgba(10, 102, 194, 0.18);
+      }
+      50% {
+        box-shadow: 0 12px 25px rgba(10, 102, 194, 0.6);
+        transform: translateY(-2px);
+      }
+    }
+    
+    @keyframes pulseGlowInstagram {
+      0%, 100% {
+        box-shadow: 0 8px 18px rgba(225, 48, 108, 0.18);
+      }
+      50% {
+        box-shadow: 0 12px 25px rgba(225, 48, 108, 0.6);
+        transform: translateY(-2px);
+      }
+    }
+    
     @keyframes fadeInUp {
       0% {
         opacity: 0;
@@ -484,6 +518,7 @@
       
       .btn-group {
         flex-direction: row;
+        flex-wrap: wrap;
         width: auto;
         justify-content: flex-end;
         margin-top: 0;
@@ -521,6 +556,15 @@
       
       .tag-yellow {
         margin-top: 0;
+      }
+    }
+    
+    /* Responsividade para telas menores */
+    @media (max-width: 767px) {
+      .btn-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.7rem;
       }
     }
     
@@ -591,6 +635,18 @@
         <a href="mailto:pjdevalexandre@gmail.com" class="btn btn-email">
           <i class="fa-solid fa-envelope"></i>
           <span>Email</span>
+        </a>
+        
+        <!-- Botão LinkedIn -->
+        <a href="https://www.linkedin.com/in/alexandre-silva-5342a5308/" target="_blank" class="btn btn-linkedin">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        
+        <!-- Botão Instagram -->
+        <a href="https://www.instagram.com/alexandres.0/" target="_blank" class="btn btn-instagram">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
         </a>
       </div>
     </div>
@@ -708,7 +764,7 @@
               <div><span class="tag-yellow">Gestão</span></div>
             </div>
             <div class="exp-desc" aria-hidden="true">
-              <p>Responsável pela gestão de colaboradores: Treinamento, escala, e resolução de problemas operacionais e técnicos. Habilidade consolidada em tomada de decisão sob pressão e feedback contínuo.</p>
+              <p>Responsável pela gestão de colaboradores: Treinamento, escala, e resolução de problemas operacionais e técnicos. Habilidade consolidada em tomada de decisão sob pressão và feedback contínuo.</p>
             </div>
             <button class="btn" onclick="toggleExp('e1', this)">
               <i class="fa-solid fa-chevron-down"></i>
@@ -825,4 +881,3 @@
   </script>
 </body>
 </html>
-
