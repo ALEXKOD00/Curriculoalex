@@ -25,6 +25,9 @@
       --shadow: 0 10px 30px rgba(0,0,0,0.6);
       --linkedin: #0a66c2;      /* Azul LinkedIn */
       --instagram: #e1306c;     /* Rosa Instagram */
+      --whatsapp: #25D366;      /* Verde WhatsApp */
+      --email: #EA4335;         /* Vermelho Gmail */
+      --download: #9b59b6;      /* Roxo Download */
     }
     
     /* Reset e estilos base */
@@ -137,14 +140,13 @@
     
     /* Botões */
     .btn {
-      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
-      color: #080808;
+      color: white;
       padding: 10px 14px;
       border-radius: 10px;
       border: none;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 8px 18px rgba(241,196,15,0.18);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
       animation: pulseGlow 3s ease-in-out infinite;
       display: inline-flex;
@@ -185,29 +187,27 @@
     
     /* Botões específicos */
     .btn-download {
-      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
-      color: #080808;
+      background: linear-gradient(180deg, var(--download), #7d3c98);
+      animation: pulseGlowDownload 3s ease-in-out infinite;
     }
     
     .btn-whatsapp {
-       background: linear-gradient(180deg, var(--accent), var(--accent-dark));
-      color: #080808;
+      background: linear-gradient(180deg, var(--whatsapp), #128C7E);
+      animation: pulseGlowWhatsApp 3s ease-in-out infinite;
     }
     
     .btn-email {
-      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
-      color: #080808;
+      background: linear-gradient(180deg, var(--email), #B23121);
+      animation: pulseGlowEmail 3s ease-in-out infinite;
     }
     
     .btn-linkedin {
       background: linear-gradient(180deg, var(--linkedin), #084a9c);
-      color: white;
       animation: pulseGlowLinkedIn 3s ease-in-out infinite;
     }
     
     .btn-instagram {
       background: linear-gradient(45deg, var(--instagram), #833ab4, #fcaf45);
-      color: white;
       animation: pulseGlowInstagram 3s ease-in-out infinite;
     }
     
@@ -449,12 +449,32 @@
     }
     
     /* Animações */
-    @keyframes pulseGlow {
+    @keyframes pulseGlowDownload {
       0%, 100% {
-        box-shadow: 0 8px 18px rgba(241,196,15,0.18);
+        box-shadow: 0 8px 18px rgba(155, 89, 182, 0.18);
       }
       50% {
-        box-shadow: 0 12px 25px rgba(241,196,15,0.6);
+        box-shadow: 0 12px 25px rgba(155, 89, 182, 0.6);
+        transform: translateY(-2px);
+      }
+    }
+    
+    @keyframes pulseGlowWhatsApp {
+      0%, 100% {
+        box-shadow: 0 8px 18px rgba(37, 211, 102, 0.18);
+      }
+      50% {
+        box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
+        transform: translateY(-2px);
+      }
+    }
+    
+    @keyframes pulseGlowEmail {
+      0%, 100% {
+        box-shadow: 0 8px 18px rgba(234, 67, 53, 0.18);
+      }
+      50% {
+        box-shadow: 0 12px 25px rgba(234, 67, 53, 0.6);
         transform: translateY(-2px);
       }
     }
@@ -717,6 +737,9 @@
           <strong>Sistemas de Informação — UFRA</strong> (em andamento)
         </p>
         <p style="color:var(--muted)">
+          <strong>Pedagogia — UNOPAR ANHANGUERA</strong> (cursando)
+        </p>
+        <p style="color:var(--muted)">
           <strong>Cursos:</strong> Informática Básica & Avançada; Libras (Básico e Intermediário)
         </p>
       </div>
@@ -764,7 +787,7 @@
               <div><span class="tag-yellow">Gestão</span></div>
             </div>
             <div class="exp-desc" aria-hidden="true">
-              <p>Responsável pela gestão de colaboradores: Treinamento, escala, e resolução de problemas operacionais e técnicos. Habilidade consolidada em tomada de decisão sob pressão và feedback contínuo.</p>
+              <p>Responsável pela gestão de colaboradores: Treinamento, escala, e resolução de problemas operacionais e técnicos. Habilidade consolidada em tomada de decisão sob pressão e feedback contínuo.</p>
             </div>
             <button class="btn" onclick="toggleExp('e1', this)">
               <i class="fa-solid fa-chevron-down"></i>
