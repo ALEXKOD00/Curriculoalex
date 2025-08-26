@@ -215,10 +215,11 @@
     .btn-expand {
       background: linear-gradient(180deg, var(--accent), var(--accent-dark));
       color: #080808 !important;
-      padding: 8px 12px;
+      padding: 10px 16px;
       font-size: 0.9rem;
-      margin-top: 10px;
+      margin-top: 16px;
       animation: pulseGlow 3s ease-in-out infinite;
+      width: auto;
     }
     
     .btn-expand:hover {
@@ -411,10 +412,26 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.45s cubic-bezier(.2,.9,.2,1);
+      padding: 0 8px;
     }
     
     .exp-desc.open {
       max-height: 420px;
+      padding: 12px 8px;
+    }
+    
+    .exp-desc p {
+      margin-bottom: 12px;
+    }
+    
+    .exp-desc ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+    
+    .exp-desc li {
+      margin-bottom: 6px;
+      line-height: 1.4;
     }
     
     .tag-yellow {
@@ -828,14 +845,14 @@
             </div>
             <div class="exp-desc" aria-hidden="true">
               <p>Atuo como caixa responsável, realizando todas as operações financeiras do estabelecimento com precisão e organização. Minhas principais responsabilidades incluem:</p>
-  <ul style="color:var(--muted);margin-left:20px;margin-top:8px">
-    <li>Atendimento ao cliente com excelência no momento do fechamento de contas</li>
-    <li>Gestão do fluxo de caixa e conferência de valores</li>
-    <li>Operação do sistema PDV e emissão de relatórios financeiros</li>
-    <li>Escala de serviço dos garçons, organizando e distribuindo as funções</li>
-    <li>Supervisão das atividades da equipe de atendimento durante o expediente</li>
-    <li>Resolução de questões operacionais.</li>
-  </ul>
+              <ul>
+                <li>Atendimento ao cliente com excelência no momento do fechamento de contas</li>
+                <li>Gestão do fluxo de caixa e conferência de valores</li>
+                <li>Operação do sistema PDV e emissão de relatórios financeiros</li>
+                <li>Escala de serviço dos garçons, organizando e distribuindo as funções</li>
+                <li>Supervisão das atividades da equipe de atendimento durante o expediente</li>
+                <li>Resolução de questões operacionais.</li>
+              </ul>
             </div>
             <button class="btn btn-expand" onclick="toggleExp('e1', this)">
               <i class="fa-solid fa-chevron-down"></i>
@@ -844,28 +861,32 @@
           </article>
 
           <article class="exp-item" id="e4">
-  <div class="exp-head">
-    <div>
-      <h3>Professor de Informática (Estágio) — CMAPID</h3>
-      <div style="color:var(--muted);font-size:0.9rem">2024 — 2024</div>
-    </div>
-    <div><span class="tag-yellow">Educação Tecnológica</span></div>
-  </div>
-  <div class="exp-desc" aria-hidden="true">
-    <p>Atuei como estagiário em meio período, ministrando aulas de informática básica e intermediária para público diverso (crianças, adolescentes e adultos). Desenvolvi materiais didáticos adaptados e metodologias de ensino inclusivas.</p>
-    <p><strong>Principais atividades:</strong></p>
-    <ul style="color:var(--muted);margin-left:20px;margin-top:8px">
-      <li>Planejamento e ministração de aulas práticas</li>
-      <li>Suporte individualizado aos alunos</li>
-      <li>Adaptação de conteúdo para diferentes níveis de conhecimento</li>
-      <li>Manutenção básica dos equipamentos do laboratório</li>
-    </ul>
-  </div>
-  <button class="btn btn-expand" onclick="toggleExp('e4', this)">
-    <i class="fa-solid fa-chevron-down"></i>
-    <span>Ver mais</span>
-  </button>
-</article>
+            <div class="exp-head">
+              <div>
+                <h3>Auxiliar administrativo (Estágio) — CMAPID</h3>
+                <div style="color:var(--muted);font-size:0.9rem">2024 — 2024</div>
+              </div>
+              <div><span class="tag-yellow">Educação Tecnológica</span></div>
+            </div>
+            <div class="exp-desc" aria-hidden="true">
+              <p>Atuei como estagiário em meio período, ministrando aulas de informática básica e intermediária para público diverso (crianças, adolescentes e adultos). Desenvolvi materiais didáticos adaptados e metodologias de ensino inclusivas.</p>
+              <p><strong>Principais atividades:</strong></p>
+              <ul>
+                <li>Planejamento e ministração de aulas práticas</li>
+                <li>Suporte individualizado aos alunos</li>
+                <li>Adaptação de conteúdo para diferentes níveis de conhecimento</li>
+                <li>Manutenção básica dos equipamentos do laboratório</li>
+                <li>Elaboração e encaminhamento de ofícios e documentos administrativos;</li>
+                <li>Organização de pranchetas, arquivos e materiais de apoio;</li>
+                <li>Apoio em rotinas de escritório, incluindo digitação, conferência e controle de documentos;</li>
+                <li>Suporte às demandas administrativas da unidade escolar.</li>
+              </ul>
+            </div>
+            <button class="btn btn-expand" onclick="toggleExp('e4', this)">
+              <i class="fa-solid fa-chevron-down"></i>
+              <span>Ver mais</span>
+            </button>
+          </article>
 
           <!-- Caixa -->
           <article class="exp-item" id="e2">
@@ -952,6 +973,3 @@
   </script>
 </body>
 </html>
-
-
-
